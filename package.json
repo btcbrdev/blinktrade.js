@@ -1,0 +1,20 @@
+{
+  "name": "bitex-ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bitex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/sergiohlb2/foxdata2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sergiohlb2/foxdata2#readme",
+  "dependencies": {
+    "dotenv": "^1.2.0",
+    "ws": "^0.8.0"
+  }
+}
