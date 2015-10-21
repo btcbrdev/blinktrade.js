@@ -11,30 +11,18 @@ function Bitex(broker_id, api_key, api_pass, opt_second_factor) {
     var self = this
       , ws = new WebSocket('wss://api.blinktrade.com/trade/');
 
-    this.broker = broker_id;
-    this.api_key = api_key;
-    this.api_pass = api_pass;
-    this.opt_second_factor = opt_second_factor; //api secret
-    this.fingerprint = parseInt(Math.random() * 1000000, 10); //random integer
-    this.ws = ws;
+    self.broker = broker_id;
+    self.api_key = api_key;
+    self.api_pass = api_pass;
+    self.opt_second_factor = opt_second_factor; //api secret
+    self.fingerprint = parseInt(Math.random() * 1000000, 10); //random integer
+    self.ws = ws;
 
     ws.on('open', function() {
         console.log('OPEN CONNECTION');
-
-        //self.login();
-        //self.subscribeMarketData(2, ['BTCBRL'], ['0', '1']);
-        self.subscribeSecurityStatus(['BTCBRL']);
     });
 
-    ws.on('message', function(e) {
-        var msg = JSON.parse(e);
-
-        console.log(msg);
-
-        //if (msg['MsgType'] === 'U5') {
-        //    console.log(msg);
-        //}
-    });
+    ws.on('message', function(e) {});
 
     ws.on('close', function() {
         console.log('CLOSE CONNECTION');
